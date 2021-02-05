@@ -40,10 +40,14 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div>
+                    <a th:href="@{/login}">
+                        <button class="btn btn-outline-info" type="button">로그인</button>
+                    </a>
+                    <a th:href="@{/member/sign-up}">
+                        <button class="btn btn-success ml-7" type="button">회원가입</button>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>

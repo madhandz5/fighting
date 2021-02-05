@@ -1,6 +1,7 @@
 package ryan.fighting.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,7 +15,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
                 .mvcMatchers("/").permitAll()
-                .antMatchers("/member/sign-up").permitAll()
+                .antMatchers(HttpMethod.GET, "/member/sign-up").permitAll()
+                .antMatchers(HttpMethod.POST, "/member/sign-up").permitAll()
                 .antMatchers("/login").permitAll()
 
                 .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
