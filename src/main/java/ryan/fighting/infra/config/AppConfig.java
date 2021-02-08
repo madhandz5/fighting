@@ -1,4 +1,4 @@
-package ryan.fighting.config;
+package ryan.fighting.infra.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
