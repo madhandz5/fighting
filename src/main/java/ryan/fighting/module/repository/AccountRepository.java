@@ -5,6 +5,8 @@ import ryan.fighting.module.domain.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
+    Account findAccountById(Long id);
+
     boolean existsByEmail(String email);
 
     boolean existsByNickname(String nickname);
