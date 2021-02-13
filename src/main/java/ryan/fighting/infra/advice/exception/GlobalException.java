@@ -2,7 +2,7 @@ package ryan.fighting.infra.advice.exception;
 
 import lombok.Getter;
 import lombok.Setter;
-import ryan.fighting.module.domain.util.CommonResponse;
+import ryan.fighting.infra.util.CommonResponse;
 
 @Getter
 @Setter

@@ -1,4 +1,4 @@
-package ryan.fighting.module.domain.util;
+package ryan.fighting.infra.util;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.ToString;

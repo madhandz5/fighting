@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import ryan.fighting.infra.advice.exception.GlobalException;
-import ryan.fighting.module.domain.util.CommonResponse;
+import ryan.fighting.infra.util.CommonResponse;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;

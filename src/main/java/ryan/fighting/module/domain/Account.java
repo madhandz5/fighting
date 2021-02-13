@@ -1,8 +1,11 @@
 package ryan.fighting.module.domain;
 
 import lombok.*;
+import ryan.fighting.module.domain.address.Address;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,4 +29,8 @@ public class Account {
     private String email;
 
     private String password;
+
+    @OneToMany(mappedBy = "account")
+    private List<Address> addressList = new ArrayList<>();
+
 }

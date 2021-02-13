@@ -2,8 +2,8 @@ package ryan.fighting.module.domain.address;
 
 
 import lombok.*;
+import ryan.fighting.module.domain.Account;
 import ryan.fighting.module.domain.address.enums.AddressType;
-import ryan.fighting.module.domain.member.Member;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -30,7 +30,7 @@ public abstract class Address {
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")
-    private Member member;
+    private Account account;
 
     private String addressName;
     @Enumerated(EnumType.STRING)
