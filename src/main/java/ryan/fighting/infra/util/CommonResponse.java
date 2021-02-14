@@ -31,7 +31,7 @@ public class CommonResponse {
         TOO_MANY_WISH_LIST("1301", "You can not make more than 5 wish list"),
         TOO_MANY_WISH_LIST_ITEM("1301","30 Max items in wish list"),
         PRODUCT_ALREADY_EXIST("1302", "Selected item has been added to your wish list"),
-        PRODUCT_EXCEPTION("1303", "Product exeception - execute"),
+        PRODUCT_EXCEPTION("1303", "Product exception - execute"),
 
         // VISIT
         VISIT_EXCEPTION("1401" , "Visitor Process Error"),
