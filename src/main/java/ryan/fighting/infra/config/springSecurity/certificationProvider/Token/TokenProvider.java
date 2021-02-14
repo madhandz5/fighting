@@ -15,7 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import ryan.fighting.module.domain.Account;
-import ryan.fighting.module.service.member.MemberService;
+import ryan.fighting.module.service.AccountService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.ZoneId;
@@ -34,7 +34,7 @@ public class TokenProvider {
     private String secretKey;
 
     @Autowired
-    private MemberService memberService;
+    private AccountService accountService;
 
 //    @Autowired
 //    private VisitorService visitorService;
@@ -42,14 +42,14 @@ public class TokenProvider {
     private JWTVerifier JwtDecoder;
 
     @Autowired
-    public TokenProvider(MemberService memberService) {
+    public TokenProvider(AccountService accountService) {
         Algorithm algorithm = Algorithm.HMAC256(this.secretKey);
         this.JwtDecoder = JWT.require(algorithm).withIssuer(ISSUER).build();
     }
 
     public Authentication getAuthentication(String email , String authToken) {
         // 로그인 인증처리
-        Account account = (Account) memberService.loadUserByUsername(email);
+        Account account = (Account) accountService.loadUserByUsername(email);
 
         SimpleGrantedAuthority grant = new SimpleGrantedAuthority(account.getNickname());
         List<GrantedAuthority> result = new ArrayList<>();
